@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Template</title>
+    </head>
+    <body>
+        <div id="body-container">
+            <div id="sidebar-container">
+                <div id="sidebar-top-container">
+                    <div id="sidebar-top-logo-container">
+                        <h1 id="logo-text">
+                            <button id="main-notes-button">N O T E S</button>
+                        </h1>
+                        <button id="add-note-btn">+</button>
+                    </div>
+                </div>
+                <div id="sidebar-bottom-container">
+                    <h2 id="groups-text">
+                        Groups <button id="add-group-btn">+</button>
+                    </h2>
+                </div>
+            </div>
+            <div id="main-container">
+                <div id="main-title-bar">
+                    <h2 id="main-title-text">Home</h2>
+                </div>
+                <dialog id="add-group-modal">
+                    <div id="input-group-div">
+                        <label for="group-name">New Group Name:</label>
+                        <input type="text" name="group-name" id="group-name" />
+                        <button id="submit-group-btn">Add Group</button>
+                    </div>
+                </dialog>
+                <dialog id="add-note-modal">
+                    <div id="input-title-div">
+                        <label for="title">Title: </label>
+                        <input type="text" name="title" id="title" required />
+                    </div>
+                    <div id="input-listgroup-div">
+                        <label for="list-group">List Group:</label>
+                        <select name="list-group" id="list-group"></select>
+                    </div>
+                    <div id="input-desc-div">
+                        <label for="description">Description: </label>
+                        <textarea
+                            name="description"
+                            id="description"
+                            rows="4"
+                        ></textarea>
+                    </div>
+                    <div class="modal-bottom-div">
+                        <label for="due-date">Due by: </label>
+                        <input
+                            type="date"
+                            name="due-date"
+                            id="due-date"
+                            required
+                        />
+                    </div>
+                    <div id="input-prio-div" class="modal-bottom-div">
+                        <label for="priority">Priority: </label>
+                        <select name="priority" id="priority">
+                            <option value="low">Low</option>
+                            <option value="medium">Medium</option>
+                            <option value="high">High</option>
+                        </select>
+                    </div>
+                    <button id="submit-note-btn">Add To List</button>
+                </dialog>
+                <div id="main-notes-container"></div>
+            </div>
+        </div>
+    <script defer src="main.js"></script></body>
+</html>
