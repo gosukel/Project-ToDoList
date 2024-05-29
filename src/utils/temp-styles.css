@@ -28,6 +28,7 @@ body {
 }
 body {
     font-family: "freeman", sans-serif;
+    background-color: #f1f2f3;
 }
 button {
     font-family: "freeman";
@@ -191,6 +192,8 @@ button:active {
     flex: 1;
     display: flex;
     flex-direction: column;
+    max-height: 100%;
+    overflow: scroll;
 }
 
 #main-title-bar {
