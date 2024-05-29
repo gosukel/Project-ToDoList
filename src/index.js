@@ -11,6 +11,7 @@ import filterNotes from "./filterNotes.js";
 import addCheckboxEvent from "./addCheckboxEvent.js";
 import addNote from "./addNote.js";
 import handleLocalStorage from "./handleLocalStoage.js";
+import changeTitleName from "./changeTitleName.js";
 
 let { notesList, groupsList } = handleLocalStorage("startup");
 // console.log(notesList);
@@ -42,6 +43,7 @@ function fixGroupFilters() {
     for (let btn of allGroupButtons) {
         btn.addEventListener("click", (e) => {
             makeNotes(filterNotes(notesList, btn.textContent, false, false));
+            changeTitleName(btn.textContent);
         });
     }
 }
@@ -51,6 +53,7 @@ function fixGroupFilters() {
 for (let btn of bottomSidebarBtns) {
     btn.addEventListener("click", (e) => {
         makeNotes(filterNotes(notesList, btn.textContent, false, false));
+        changeTitleName(btn.textContent);
     });
 }
 // + NOTE BUTTON
@@ -79,11 +82,13 @@ submitNoteBtn.addEventListener("click", (e) => {
 for (let btn of topSideBarBtns) {
     btn.addEventListener("click", (e) => {
         makeNotes(filterNotes(notesList, "all", false, btn.id));
+        changeTitleName(btn.textContent);
     });
 }
 // MAIN NOTES BUTTON
 mainNotesBtn.addEventListener("click", () => {
     let filteredNotes = filterNotes(notesList, "all", false, false);
     makeNotes(filteredNotes, false);
+    changeTitleName("Home");
     fixCheckboxes();
 });
